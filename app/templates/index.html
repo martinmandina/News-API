@@ -1,3 +1,4 @@
+<h1>hallo world</h1>
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,4 +9,13 @@
         <title>News - Breaking News From Around The World</title>
         {% endif %}
     </head>
+    <body>
+        <h3>{{ news_id }}</h3>
+       <h2>Top Headlines</h2>
+       <ul>
+           {% for top_headlines in news %}
+           <li>{{ top_headlines.title }}</li>
+           {% endfor %}
+       </ul>
+    </body>
 </html>

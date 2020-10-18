@@ -6,10 +6,10 @@ News = news.News
 
 api_key = app.config['NEWS_API_KEY']
 
-base_url = app.config[' NEWS_API_BASE_URL']
+base_url = app.config['NEWS_API_BASE_URL']
 
-def get_news(top_headlines):
-    get_news_url = base_url.format(top_headlines,api_key)
+def get_news(category):
+    get_news_url = base_url.format(category,api_key)
 
     with urllib.request.urlopen(get_news_url) as url:
         get_news_data = url.read()
@@ -17,9 +17,30 @@ def get_news(top_headlines):
         
         news_results = None
 
-        if get_news_response['results']
+        if get_news_response['results']:
             news_results_list = get_news_response['results']
             news_results = process_results(news_results_list)
 
     return news_results
+
+def process_news(news_tray):
+    news_results = []
+    for news_item in news_tray:
+        author = news_item.get('author')
+        title = news_item.get('title')
+        description = news_item.get('description')
+        url = news_item.get('url')
+        images = news_item.get('images')
+        publishedAt = news_item.get('publishedAt')
+        content = news_item.get('content')
+
+
+    if image:
+        news_object = News(author,title,description,url,urlToImage,publishedAt,content)
+        news_results.append(news_object)
+
+        return news_results
+
+
+
 
