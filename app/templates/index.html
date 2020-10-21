@@ -1,4 +1,4 @@
-<h1>hallo world</h1>
+{% import 'macros.html' as macro%}
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,16 +6,28 @@
         {% if title %}
         <title> {{ title }} </title>
         {% else %}
-        <title>News - Breaking News From Around The World</title>
+        <title>News - Top News and Stories For You</title>
         {% endif %}
     </head>
     <body>
-        <h3>{{ news_id }}</h3>
-       <h2>Top Headlines</h2>
+        <h3>Business News</h3>
        <ul>
-           {% for top_headlines in news %}
-           <li>{{ top_headlines.title }}</li>
-           {% endfor %}
-       </ul>
+           {{ macro.displaySourceList(business_news)}}
+        </ul>
+        
+       <h3>Entertainment News </h3>
+         <ul>
+            {{ macro.displaySourceList(entertainment_news)}}
+        </ul>
+
+        <h3> Technology News </h3>
+         <ul>
+            {{ macro.displaySourceList(technology_news)}}
+        </ul>
+
+        <h3>Health News</h3>
+         <ul>
+            {{ macro.displaySourceList(health_news)}}
+         </ul>
     </body>
 </html>

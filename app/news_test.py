@@ -1,19 +1,31 @@
 import unittest
 from models import news
 
-News = news.News
+Source = news.Sources
 
 class NewsTest(unittest.TestCase):
 
     def setUp(self):
-        self.new_news = News('Rebecca Tan','Women March','Hundreds Gathered for march',
-        'https://www.washingtonpost.com/dc-md-va/2020/10/17/womens-march-dc-updates',
-        'https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/MAEO5TPCYNAVHF72H6LFACODXE.jpg&w=1440',
-        '2020-10-17T16:23:00Z',
-        'Everything we have been doing has been')
-    def test_instance(self):
-        self.assertTrue(isinstance(self.new_news,News))
+        self.new_source = Source('self','bloomberg','Bloomberg','Bloomberg delivers business and markets','http://www.bloomberg.com"','business','en','us')
+        '''
+        This method that will run before every Test
+        '''
 
+    def test_instance(self):
+        self.assertTrue(isinstance(self.new_source,Sources))
+
+    def test_to_confirm_variable_instatiation(self):
+        '''
+        Test to confirm that objects are instaitated correctly
+        '''
+        self.assertEquals(self.new_origin.id,'bloomberg')
+        self.assertEquals(self.new_origin.name,'Bloomberg')
+        self.assertEquals(self.new_origin.description,'Bloomberg delivers business and markets news')
+        self.assertEquals(self.new_origin.url,"http://www.bloomberg.com")
+        self.assertEquals(self.new_origin.category,'business')
+        self.assertEquals(self.new_origin.language,'en')
+        self.assertEquals(self.new_origin.country,'us')
+        
 if __name__ == '__main__':
     unittest.main()
 

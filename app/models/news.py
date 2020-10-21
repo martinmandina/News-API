@@ -1,10 +1,10 @@
-class News:
+class Sources:
 
-    def __init__(self,author,title,description,url,urlToImage,publishedAt,content):
-        self.author = author
-        self.title = title
+    def __init__(self,id,name,description,url,category,country,language):
+        self.id = id
+        self.name = name
         self.description = description
         self.url = url
-        self.urlToImage = Images
-        self.publishedAt = publishedAt
-        self.content = content
+        self.category = category
+        self.country = country
+        self.language = language
