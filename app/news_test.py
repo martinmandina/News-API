@@ -1,5 +1,5 @@
 import unittest
-from models import news
+from models import news,articles
 
 Source = news.Sources
 
@@ -26,6 +26,7 @@ class NewsTest(unittest.TestCase):
         self.assertEquals(self.new_origin.language,'en')
         self.assertEquals(self.new_origin.country,'us')
         
+    
 if __name__ == '__main__':
     unittest.main()
 

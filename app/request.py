@@ -52,6 +52,48 @@ def process_sources(sources_list):
 
     return sources_results
 
+ def get_articles(name):
+    '''
+    Getting articles from the sources lists
+    '''
+    get_articles_url = articles_url.format(name,api_key)
+
+    with urllib.request.urlopen(get_articles_url) as url:
+		articles_results = json.loads(url.read())
+
+        articles_object = None
+		if articles_results['articles']:
+			articles_object = process_articles(articles_results['articles'])
+
+	return articles_object
+
+def process_articles(articles_list):
+    '''
+    function to process articles objects
+    '''
+    articles_object = []
+    for article_item in articles_list:
+        id = article_item.get('id')
+		author = article_item.get('author')
+		title = article_item.get('title')
+		description = article_item.get('description')
+		url = article_item.get('url')
+		image = article_item.get('urlToImage')
+		date = article_item.get('publishedAt')
+		
+		if image:
+			articles_result = Articles(id,author,title,description,url,image,date)
+			articles_object.append(articles_result)	
+		
+
+
+    
+
+
+
+
+
+
 
 
 
