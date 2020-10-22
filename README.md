@@ -1,23 +1,19 @@
 # NEWS-API
-## Description
+### Description
 #### This is an Web Application that shows a list of news websites, This application will help previewing news articles from various sources.
-## Link To Live Site:
+### Link To Live Site:
 
-## BDD AS A USER :
+### BDD AS A USER :
 #### View News from Various sites in this Web Application
 #### Be able to see all news selected on a specific category.
 #### You can click on a specific news source and navigate to that page.
-## AUTHOR:
+### AUTHOR:
 #### Martin Sila Mandina
-## TECHNOLOGIES:
+### TECHNOLOGIES:
 #### Python3.6
 #### Terminal
 #### Flask
 #### Bootstrap
-## DEPENDENCIES:
-#### unittest module 
-#### python shell
-#### pip for installation
 ## SETUP & INSTALLATION INSTRUCTIONS:
 #### 1. Ensure that Python3.6 is installed.
 #### 2. Open Terminal.
