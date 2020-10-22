@@ -1,10 +1,12 @@
 # NEWS-API
 ## Description
 #### This is an Web Application that shows a list of news websites, This application will help previewing news articles from various sources.
-## BDD 
-#### User to see news from outside sources
-#### User to be able to select a news article by click
-#### User to be able to go to full news article  articles web
+## Link To Live Site:
+
+## BDD AS A USER :
+#### View News from Various sites in this Web Application
+#### Be able to see all news selected on a specific category.
+#### You can click on a specific news source and navigate to that page.
 ## AUTHOR:
 #### Martin Sila Mandina
 ## TECHNOLOGIES:
