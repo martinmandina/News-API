@@ -23,3 +23,4 @@ def news(news_id):
 
     return render_template('news.html',id = news_id)
     
+    
