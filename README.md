@@ -8,7 +8,7 @@
 #### Be able to see all news selected on a specific category.
 #### You can click on a specific news source and navigate to that page.
 ### AUTHOR:
-#### Martin Sila Mandina
+#### Martin Sila Mandina.
 ### TECHNOLOGIES:
 #### Python3.6
 #### Terminal
