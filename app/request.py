@@ -8,11 +8,13 @@ api_key = None
 # Getting the movie base url
 base_url = None
 
+article_url = None
+
 def configure_request(app):
-    global api_key,base_url
+    global api_key,base_url,article_url
     api_key = app.config['NEWS_API_KEY']
     base_url = app.config['NEWS_API_BASE_URL']
-
+    article_url = app.config['ARTICLE_BASE_URL']
 def get_sources(category):
     '''
     Function that gets the json response to our url request
@@ -57,19 +59,18 @@ def process_sources(sources_list):
     return sources_results
 
 def get_articles(id):
-    '''
-    Getting articles from the sources lists
-    '''
-    get_articles_url = articles_url.format(id,api_key)
-
+    get_articles_url = article_url.format(id,api_key)
+    # import pdb; pdb.set_trace()
+    
     with urllib.request.urlopen(get_articles_url) as url:
-	    articles_results = json.loads(url.read())
+        articles_data = url.read()
+	    articles_results = json.loads(articles_data)
+        # import pdb; pdb.set_trace()
+        articles_object = None
 
-    articles_object = None
-    if articles_results['articles']:
-	    articles_object = process_articles(articles_results['articles'])
-
-	    return articles_object
+        if articles_results['articles']:
+            articles_object = process_articles(articles_results['articles'])
+    return articles_object
 
 def process_articles(articles_list):
     '''
@@ -85,9 +86,12 @@ def process_articles(articles_list):
         image = article_item.get('urlToImage')
         date = article_item.get('publishedAt')
 		
-    if image:
-	    articles_result = Articles(id,author,title,description,url,image,date)
-	    articles_object.append(articles_result)	
+        if image:
+	        articles_result = Articles(id,author,title,description,url,image,date)
+	        articles_object.append(articles_result)
+    return articles_object
+
+
 
 
 

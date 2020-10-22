@@ -3,7 +3,18 @@
     {% for source in sources_list %}
         <h4><strong>{{ source.name}}</strong></h4>
         <p>{{ source.description}}</p>
-        <a href="{{source.url}}">Go to {{source.name}}</a>
+        <a href="/sources/{{source.id}}">Go to {{source.name}}</a>
+    {% endfor %}
+
+{% endmacro %}
+
+{% macro displayArticleList(articles_list) %}
+
+    {% for article in articles_list %}
+    <h4><strong>{{ article.title}}</strong></h4>
+    <p>{{ article.description}}</p>
+    <img src = "{{article.urlToImage}}">
+    <a href="{{article.url}}">Read More</a>
     {% endfor %}
 
 {% endmacro %}

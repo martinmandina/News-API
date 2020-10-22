@@ -1,10 +1,6 @@
 from flask import render_template,request,redirect,url_for
 from . import main
-from ..requests import get_movies,get_movie,search_movie
-from .forms import ReviewForm
-from ..models import Review
-
-
+from ..request import get_sources,get_articles
 
 @main.route('/')
 def index():
@@ -20,8 +16,8 @@ def index():
     return render_template('index.html',title = title,business_news = business_news,entertainment_news = entertainment_news,technology_news = technology_news, health_news =  health_news)
     
 @main.route('/sources/<id>')
-def news(name):
-
-    return render_template('news.html',id = news_id)
+def news(id):
+    articles = get_articles(id)
+    return render_template('articles.html',articles = articles)
     
     
