@@ -60,18 +60,14 @@ def process_sources(sources_list):
 
 def get_articles(id):
     get_articles_url = article_url.format(id,api_key)
-    # import pdb; pdb.set_trace()
-    
     with urllib.request.urlopen(get_articles_url) as url:
         articles_data = url.read()
-	    articles_results = json.loads(articles_data)
+        articles_results = json.loads(articles_data)
         # import pdb; pdb.set_trace()
         articles_object = None
-
         if articles_results['articles']:
             articles_object = process_articles(articles_results['articles'])
     return articles_object
-
 def process_articles(articles_list):
     '''
     function to process articles objects
@@ -85,16 +81,10 @@ def process_articles(articles_list):
         url = article_item.get('url')
         image = article_item.get('urlToImage')
         date = article_item.get('publishedAt')
-		
         if image:
-	        articles_result = Articles(id,author,title,description,url,image,date)
-	        articles_object.append(articles_result)
+            articles_result = Articles(id,author,title,description,url,image,date)
+            articles_object.append(articles_result)
     return articles_object
-
-
-
-
-
 
     
 
