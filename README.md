@@ -1,5 +1,5 @@
 ## NEWS-API
-### Description
+### Description:
 #### This is an Web Application that shows a list of news websites, This application will help previewing news articles from various sources.
 ### BDD AS A USER :
 #### View News from Various sites in this Web Application
