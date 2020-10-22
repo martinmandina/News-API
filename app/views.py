@@ -4,6 +4,7 @@ from .request import get_sources
 
 
 
+
 @app.route('/')
 def index():
     '''
@@ -16,7 +17,7 @@ def index():
 
     title = 'News - Top News And Stories For You'
     return render_template('index.html',title = title,business_news = business_news,entertainment_news = entertainment_news,technology_news = technology_news, health_news =  health_news)
-
+    
 @app.route('/news/<int:news_id>')
 def news(news_id):
 

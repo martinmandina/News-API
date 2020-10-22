@@ -1,6 +1,7 @@
 from app import app
 import urllib.request,json
-from .models import news
+from .models import news,articles
+
 
 Sources = news.Sources
 
@@ -45,27 +46,25 @@ def process_sources(sources_list):
         language = source_item.get('language')
         country = source_item.get('country')
 
-
-   
         sources_object = Sources(id,name,description,url,category,language,country)
         sources_results.append(sources_object)
 
     return sources_results
 
- def get_articles(name):
+def get_articles(id):
     '''
     Getting articles from the sources lists
     '''
-    get_articles_url = articles_url.format(name,api_key)
+    get_articles_url = articles_url.format(id,api_key)
 
     with urllib.request.urlopen(get_articles_url) as url:
-		articles_results = json.loads(url.read())
+	    articles_results = json.loads(url.read())
 
-        articles_object = None
-		if articles_results['articles']:
-			articles_object = process_articles(articles_results['articles'])
+    articles_object = None
+    if articles_results['articles']:
+	    articles_object = process_articles(articles_results['articles'])
 
-	return articles_object
+	    return articles_object
 
 def process_articles(articles_list):
     '''
@@ -74,16 +73,16 @@ def process_articles(articles_list):
     articles_object = []
     for article_item in articles_list:
         id = article_item.get('id')
-		author = article_item.get('author')
-		title = article_item.get('title')
-		description = article_item.get('description')
-		url = article_item.get('url')
-		image = article_item.get('urlToImage')
-		date = article_item.get('publishedAt')
+        author = article_item.get('author')
+        title = article_item.get('title')
+        description = article_item.get('description')
+        url = article_item.get('url')
+        image = article_item.get('urlToImage')
+        date = article_item.get('publishedAt')
 		
-		if image:
-			articles_result = Articles(id,author,title,description,url,image,date)
-			articles_object.append(articles_result)	
+    if image:
+	    articles_result = Articles(id,author,title,description,url,image,date)
+	    articles_object.append(articles_result)	
 		
 
 
