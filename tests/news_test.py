@@ -1,5 +1,5 @@
 import unittest
-from models import news,articles
+from app.models import Sources
 
 Source = news.Sources
 
