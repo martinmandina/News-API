@@ -15,25 +15,30 @@
         {% block content %}
 
         <h3>Business News</h3>
+        
        <ul>
            {{ macro.displaySourceList(business_news)}}
         </ul>
-        
+        <hr>
+        <hr>
        <h3>Entertainment News </h3>
          <ul>
             {{ macro.displaySourceList(entertainment_news)}}
         </ul>
-        
+        <hr>
+        <hr>
         <h3> Technology News </h3>
          <ul>
             {{ macro.displaySourceList(technology_news)}}
         </ul>
-        
+        <hr>
+        <hr>
         <h3>Health News</h3>
          <ul>
             {{ macro.displaySourceList(health_news)}}
          </ul>
-         
+        <hr>
+        <hr>
          {% endblock%}
     </body>
 </html>
