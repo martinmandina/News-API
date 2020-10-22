@@ -83,7 +83,8 @@ def process_articles(articles_list):
     if image:
 	    articles_result = Articles(id,author,title,description,url,image,date)
 	    articles_object.append(articles_result)	
-		
+
+
 
 
     
