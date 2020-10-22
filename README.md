@@ -1,4 +1,4 @@
-# NEWS-API
+## NEWS-API
 ### Description
 #### This is an Web Application that shows a list of news websites, This application will help previewing news articles from various sources.
 ### Link To Live Site:
@@ -14,6 +14,10 @@
 #### Terminal
 #### Flask
 #### Bootstrap
+### DEPENDECIES(main):
+#### Flask
+#### Werkzeug
+#### Jinja2
 ## SETUP & INSTALLATION INSTRUCTIONS:
 #### 1. Ensure that Python3.6 is installed.
 #### 2. Open Terminal.
